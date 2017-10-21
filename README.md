@@ -35,3 +35,19 @@ java -jar configuration-0.0.1-SNAPSHOT.jar
 ```
 
 You should see that the database url is printed to the console.
+
+## Setting `applicaiton.properties` values from environment
+
+Similar to the previous approach, it is possible to assign values to properties from the environment
+in your `application.properties` file.
+
+```
+api.key=${API_KEY:not set}
+```
+
+And run your app as follows.
+
+```
+API_KEY="123abc"
+java -jar configuration-0.0.1-SNAPSHOT.jar 
+```
