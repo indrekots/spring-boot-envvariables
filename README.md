@@ -1,7 +1,7 @@
 # Using env variables with Spring Boot
 
 This is an example application which demonstrates how to configure a Spring Boot app via environment
-variables. This simple app expects to receive three properties. Default values are provided in the app.
+variables. It expects to receive three properties. Default values are provided in the app.
 
 ## SPRING_APPLICATION_JSON
 
