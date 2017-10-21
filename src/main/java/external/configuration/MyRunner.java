@@ -10,8 +10,12 @@ public class MyRunner implements CommandLineRunner {
     @Value("${ec2.public.url}")
     private String publicUrl;
 
+    @Value("${DB_URL}")
+    private String dbUrl;
+
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Public url: " + publicUrl);
+        System.out.println("Db url: " + dbUrl);
     }
 }

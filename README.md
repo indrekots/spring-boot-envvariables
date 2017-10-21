@@ -14,4 +14,24 @@ SPRING_APPLICATION_JSON='{"ec2":{"public":{"url":"http://mydomain.com"}}}'
 java -jar configuration-0.0.1-SNAPSHOT.jar
 ```
 
-Spring will read `SPRING_APPLICATION_JSON` environment variable to get its application properties.
+Spring will read `SPRING_APPLICATION_JSON` environment variable to get its application properties. On
+application startup, the value of `ec2.public.url` is printed to the console.
+
+## Injecting env variables directly
+
+`@Value` annotation can be used to inject properties to beans. It also looks for values from the
+environment. This example demonstrates how the application reads a database url from the environment.
+
+```java
+@Value("${DB_URL}")
+private String dbUrl;
+```
+
+Run the application as follows.
+
+```
+DB_URL="jdbc:hsqldb:mem:mymemdb"
+java -jar configuration-0.0.1-SNAPSHOT.jar
+```
+
+You should see that the database url is printed to the console.
